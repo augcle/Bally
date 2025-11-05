@@ -1,0 +1,28 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build with clang (C23)",
+      "type": "shell",
+      "command": "clang",
+      "args": [
+      "--target=x86_64-w64-mingw32",
+      "-std=c23",
+      "-Iinclude",
+      "${file}",
+      "-Llib",
+      "-lraylib",
+      "-lgdi32",
+      "-lwinmm",
+      "-lopengl32",
+      "-o",
+      "${fileDirname}/${fileBasenameNoExtension}.exe"
+],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    }
+  ]
+}
